@@ -83,7 +83,7 @@ public class AddMovieServlet extends HttpServlet {
                     movieManager.addMovie(movie);
                     movieManager.addRelationshipTable(movie,genres);
                     req.setAttribute("allGenres", genreManager.allGenre());
-                    req.getRequestDispatcher("/WEB-INF/adminHome.jsp").forward(req, resp);
+                    resp.sendRedirect("/WEB-INF/adminHome.jsp");
                 }
 
             } catch (FileUploadException e) {

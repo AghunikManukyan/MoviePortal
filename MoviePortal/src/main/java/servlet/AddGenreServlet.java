@@ -36,6 +36,6 @@ public class AddGenreServlet extends HttpServlet {
         GenreManager genreManager = new GenreManager();
         genreManager.addGenre(genre);
         req.setAttribute("allGenres", genreManager.allGenre());
-        req.getRequestDispatcher("/WEB-INF/adminHome.jsp").forward(req, resp);
+        resp.sendRedirect("/WEB-INF/adminHome.jsp");
     }
 }
